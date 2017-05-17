@@ -21,6 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rollBtn"
         app:layout_constraintVertical_bias="0.04" />
 
+
     <ImageView
         android:id="@+id/IntroImage"
         android:layout_width="wrap_content"
@@ -64,4 +65,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.016" />
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/dieOneImg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rollBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/dieTwoImg"
+        android:src="@drawable/dice_one"
+        app:layout_constraintVertical_bias="0.597" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/dieTwoImg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rollBtn"
+        app:layout_constraintLeft_toRightOf="@+id/dieOneImg"
+        app:layout_constraintRight_toLeftOf="@+id/dieTreeImg"
+        android:src="@drawable/dice_one"
+        android:layout_marginTop="-48dp"
+        app:layout_constraintVertical_bias="0.597" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/dieTreeImg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rollBtn"
+        app:layout_constraintLeft_toRightOf="@+id/dieTwoImg"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/dice_one"
+        android:layout_marginTop="-48dp"
+        app:layout_constraintVertical_bias="0.597" />
+    
 </android.support.constraint.ConstraintLayout>
