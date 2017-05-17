@@ -8,8 +8,28 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+import android.widget.TextView;
+import android.widget.Button;
+import java.util.Random;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    //Score counter
+    private int score;
+
+    //Holds game score (text field)
+    private TextView scoreTxt;
+
+    //Roll button
+    private Button rollBtn;
+
+    //Random object
+    private static Random rnd;
+
+    //Die value
+    int die;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +46,30 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        rnd = new Random(); //Random number object
+        score = 0; //Initial score value
+        scoreTxt = (TextView) findViewById(R.id.scoreTxt);
+        rollBtn = (Button) findViewById(R.id.rollBtn);
+
+        //Shows welcome toast message
+        Toast.makeText(this.getApplicationContext(), "Wellcome to DiceOut game!", Toast.LENGTH_SHORT).show();
+    }
+
+    //Generates random number
+    private static int rndNum(){
+        return rnd.nextInt(6) + 1;
+    }
+
+    //Roll dice method
+    public void rollDice(View v){
+
+        scoreTxt.setText(String.format("Score: %d", score));
+        //scoreTxt.setText(score); //BUG - this code is wrong, app is crushes on clickBtn event
+        die = rndNum();
+        String message = String.format("You rolled a %d", die);
+        //Toast.makeText(this.getApplicationContext(), randomValue, Toast.LENGTH_SHORT).show();
+        scoreTxt.setText(message);
     }
 
     @Override
