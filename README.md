@@ -1,5 +1,7 @@
 # DiceOut
 
+###NOTE: This thing is still a Work in Progress. Files, instructions, and other stuff might change!
+
 ### NOTE: This thing is still a Work in Progress. Files, instructions, and other stuff might change!
 
 The simulates rolling three dice and scoring a certain number of points for different combinations.
