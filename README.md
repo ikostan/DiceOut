@@ -1,5 +1,7 @@
 # DiceOut
 
+### NOTE: This thing is still a Work in Progress. Files, instructions, and other stuff might change!
+
 The simulates rolling three dice and scoring a certain number of points for different combinations.
 When the app is launched you'll see this layout, the app will show a green background, and some text at the top and the bottom. 
 There are three dice that appear in the middle and there is a Roll button that is customized with an image in the lower right corner. 
@@ -11,3 +13,4 @@ Pretty simple. But this app will teach you a lot about basic coding and get you 
 how to build apps for Android.
 
 ## Source: https://www.lynda.com/Android-tutorials/About-game
+
