@@ -4,22 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_green_dark"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.diceout.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <TextView
         android:id="@+id/helpTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="288dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="148dp"
         android:layout_marginTop="8dp"
         android:text="@string/help_msg"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rollBtn"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.808" />
 
 
     <ImageView
@@ -36,19 +38,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/two_dice_icon" />
 
-    <Button
-        android:id="@+id/rollBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/roll_btn"
-        app:layout_constraintTop_toBottomOf="@+id/IntroImage"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:onClick="rollDice"/>
-
     <TextView
         android:id="@+id/scoreTxt"
         android:layout_width="wrap_content"
@@ -58,6 +47,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/score_txt"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.806"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -74,6 +64,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/info_txt"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -82,38 +73,48 @@
         app:layout_constraintVertical_bias="0.016" />
 
     <ImageView
+        android:id="@+id/dieOneImg"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/dieOneImg"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/rollBtn"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/background_light"
+        android:contentDescription="@string/die_two_img"
+        android:src="@drawable/dice_one"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/dieTwoImg"
-        android:src="@drawable/dice_one"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463" />
 
     <ImageView
+        android:id="@+id/dieTwoImg"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/dieTwoImg"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/rollBtn"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="173dp"
+        android:background="@android:color/background_light"
+        android:contentDescription="@string/die_two_img"
+        android:src="@drawable/dice_one"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/dieOneImg"
         app:layout_constraintRight_toLeftOf="@+id/dieTreeImg"
-        android:src="@drawable/dice_one"
-        android:layout_marginTop="-48dp"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.078" />
 
     <ImageView
+        android:id="@+id/dieTreeImg"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/dieTreeImg"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/rollBtn"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="171dp"
+        android:background="@android:color/background_light"
+        android:contentDescription="@string/die_tree_img"
+        android:src="@drawable/dice_one"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/dieTwoImg"
         app:layout_constraintRight_toRightOf="parent"
-        android:src="@drawable/dice_one"
-        android:layout_marginTop="-48dp"
-        app:layout_constraintVertical_bias="0.597" />
-    
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.086" />
+
 </android.support.constraint.ConstraintLayout>

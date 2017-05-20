@@ -26,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
     private int score;
 
     //Holds game score (text field)
-    private TextView infoTxt, scoreTxt;
+    private TextView infoTxt, scoreTxt, helpTxt;
 
     //Roll button
-    private Button rollBtn;
+    //private Button rollBtn;
 
     //Random object
     private static Random rnd;
@@ -49,8 +49,10 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                rollDice(view);
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //       .setAction("Action", null).show();
             }
         });
 
@@ -63,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
         score = 0; //Initial score value
         infoTxt = (TextView) findViewById(R.id.infoTxt); //Display score
         scoreTxt = (TextView) findViewById(R.id.scoreTxt); //Display info
-        rollBtn = (Button) findViewById(R.id.rollBtn); //Instantiate Roll button
+        helpTxt = (TextView) findViewById(R.id.helpTxt); //Help text
+        //rollBtn = (Button) findViewById(R.id.rollBtn); //Instantiate Roll button
 
         //Shows welcome toast message
         Toast.makeText(this.getApplicationContext(), "Wellcome to DiceOut game!", Toast.LENGTH_SHORT).show();
@@ -77,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     //Roll dice method
     public void rollDice(View v){
 
+        helpTxt.setVisibility(View.INVISIBLE);
         IntroImage.setVisibility(View.INVISIBLE);
         //scoreTxt.setText(score); //BUG - this code is wrong, app is crushes on clickBtn event
 
@@ -88,7 +92,14 @@ public class MainActivity extends AppCompatActivity {
         setDieImg(die[1], dieTwoImg);
         setDieImg(die[2], dieTreeImg);
 
-        score = score + setScore(die[0], die[1], die[2]);
+        int newScore = setScore(die[0], die[1], die[2]);
+        score = score + newScore;
+
+        if(newScore > 0){
+
+            Toast.makeText(this.getApplicationContext(), "Congratulation, you won " + newScore + " points!", Toast.LENGTH_SHORT).show();
+        }
+
         scoreTxt.setText(String.format("Score: %d", score));
 
         String message = String.format("You rolled a %d - %d - %d", die[0], die[1], die[2]);
@@ -185,7 +196,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setImages(){
+    //Display intro image only
+    public void setImages(){
 
         IntroImage = (ImageView)findViewById(R.id.IntroImage);
         IntroImage.setVisibility(View.VISIBLE);
