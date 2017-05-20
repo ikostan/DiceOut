@@ -13,12 +13,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.TextView;
 import android.widget.Button;
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Random;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,23 +54,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        IntroImage = (ImageView)findViewById(R.id.IntroImage);
-        IntroImage.setVisibility(View.VISIBLE);
-        dieOneImg = (ImageView)findViewById(R.id.dieOneImg);
-        dieOneImg.setVisibility(View.INVISIBLE);
-        dieTwoImg = (ImageView)findViewById(R.id.dieTwoImg);
-        dieTwoImg.setVisibility(View.INVISIBLE);
-        dieTreeImg = (ImageView)findViewById(R.id.dieTreeImg);
-        dieTreeImg.setVisibility(View.INVISIBLE);
 
+        this.setImages(); //Display intro image only
         rnd = new Random(); //Random number object
 
         //ArrayList object with 3 integers inside
         dice = new int[numOfDice];
 
         score = 0; //Initial score value
-        scoreTxt = (TextView) findViewById(R.id.scoreTxt);
-        rollBtn = (Button) findViewById(R.id.rollBtn);
+        scoreTxt = (TextView) findViewById(R.id.scoreTxt); //Display score
+        rollBtn = (Button) findViewById(R.id.rollBtn); //Instantiate Roll button
 
         //Shows welcome toast message
         Toast.makeText(this.getApplicationContext(), "Wellcome to DiceOut game!", Toast.LENGTH_SHORT).show();
@@ -148,6 +138,18 @@ public class MainActivity extends AppCompatActivity {
 
         //view.setImageDrawable(android.graphics.);
         view.setVisibility(View.VISIBLE);
+    }
+
+    private void setImages(){
+
+        IntroImage = (ImageView)findViewById(R.id.IntroImage);
+        IntroImage.setVisibility(View.VISIBLE);
+        dieOneImg = (ImageView)findViewById(R.id.dieOneImg);
+        dieOneImg.setVisibility(View.INVISIBLE);
+        dieTwoImg = (ImageView)findViewById(R.id.dieTwoImg);
+        dieTwoImg.setVisibility(View.INVISIBLE);
+        dieTreeImg = (ImageView)findViewById(R.id.dieTreeImg);
+        dieTreeImg.setVisibility(View.INVISIBLE);
     }
 
     @Override
