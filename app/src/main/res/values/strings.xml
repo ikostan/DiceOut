@@ -4,5 +4,6 @@
     <string name="help_msg">In order to roll the dice please tap Roll button.</string>
     <string name="roll_btn">roll</string>
     <string name="intro_image">intro image</string>
-    <string name="score_txt">Let\'s play!</string>
+    <string name="info_txt">Let\'s play!</string>
+    <string name="score_txt">Score: 0</string>
 </resources>

@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private int score;
 
     //Holds game score (text field)
-    private TextView scoreTxt;
+    private TextView infoTxt, scoreTxt;
 
     //Roll button
     private Button rollBtn;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Die value
     private final int numOfDice = 3;
-    int[] dice;
+    int[] die;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +54,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         this.setImages(); //Display intro image only
         rnd = new Random(); //Random number object
 
         //ArrayList object with 3 integers inside
-        dice = new int[numOfDice];
+        die = new int[numOfDice];
 
         score = 0; //Initial score value
-        scoreTxt = (TextView) findViewById(R.id.scoreTxt); //Display score
+        infoTxt = (TextView) findViewById(R.id.infoTxt); //Display score
+        scoreTxt = (TextView) findViewById(R.id.scoreTxt); //Display info
         rollBtn = (Button) findViewById(R.id.rollBtn); //Instantiate Roll button
 
         //Shows welcome toast message
@@ -78,20 +78,64 @@ public class MainActivity extends AppCompatActivity {
     public void rollDice(View v){
 
         IntroImage.setVisibility(View.INVISIBLE);
-        scoreTxt.setText(String.format("Score: %d", score));
         //scoreTxt.setText(score); //BUG - this code is wrong, app is crushes on clickBtn event
 
         for(int i = 0; i < numOfDice; i++){
-            dice[i] = rndNum();
+            die[i] = rndNum();
         }
 
-        setDieImg(dice[0], dieOneImg);
-        setDieImg(dice[1], dieTwoImg);
-        setDieImg(dice[2], dieTreeImg);
+        setDieImg(die[0], dieOneImg);
+        setDieImg(die[1], dieTwoImg);
+        setDieImg(die[2], dieTreeImg);
 
-        String message = String.format("You rolled a %d - %d - %d", dice[0], dice[1], dice[2]);
-        scoreTxt.setText(message);
-        //Toast.makeText(this.getApplicationContext(), "DONE", Toast.LENGTH_SHORT).show();
+        score = score + setScore(die[0], die[1], die[2]);
+        scoreTxt.setText(String.format("Score: %d", score));
+
+        String message = String.format("You rolled a %d - %d - %d", die[0], die[1], die[2]);
+        infoTxt.setText(message);
+    }
+
+    //Return
+    private static int setScore(int dieOne, int dieTwo, int dieTree){
+
+        int output = 0;
+
+        /*
+            If you get a matching pair you score 50 points.
+            If you get three of a kind, you'll score based on the combination,
+            100 for three ones, 200 for three twos, 300 for three threes, et criteria.
+        */
+
+        if(dieOne == dieTwo && dieOne == dieTree){
+
+            switch(dieOne){
+
+                case(1):
+                    output = 100;
+                    break;
+                case(2):
+                    output = 200;
+                    break;
+                case(3):
+                    output = 300;
+                    break;
+                case(4):
+                    output = 400;
+                    break;
+                case(5):
+                    output = 500;
+                    break;
+                case(6):
+                    output = 600;
+                    break;
+            }
+        }
+        else if(dieOne == dieTwo || dieOne == dieTree || dieTwo == dieTree){
+
+            output = 50;
+        }
+
+        return output;
     }
 
     //Set die image
@@ -130,14 +174,15 @@ public class MainActivity extends AppCompatActivity {
             InputStream stream = getAssets().open(imageName);
             Drawable d = Drawable.createFromStream(stream, null);
             view.setImageDrawable(d);
+
+            //view.setImageDrawable(android.graphics.);
+            view.setVisibility(View.VISIBLE);
         }
         catch(IOException e){
-
+            //Error
             e.printStackTrace();
         }
 
-        //view.setImageDrawable(android.graphics.);
-        view.setVisibility(View.VISIBLE);
     }
 
     private void setImages(){
