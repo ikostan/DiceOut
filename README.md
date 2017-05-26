@@ -12,5 +12,10 @@ The app will show the result of your roll and display the score you've earned so
 Pretty simple. But this app will teach you a lot about basic coding and get you familiar with the Java programming language and 
 how to build apps for Android.
 
+### Example #1:
+![GUI](https://github.com/ikostan/DiceOut/creenshots/screen_1.JPG?raw=true "GUI screenshot")
+### Example #2:
+![GUI](https://github.com/ikostan/DiceOut/screenshots/screen_2.JPG?raw=true "GUI screenshot")
+
 ## Source: https://www.lynda.com/Android-tutorials/About-game
 
