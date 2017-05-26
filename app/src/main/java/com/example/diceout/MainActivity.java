@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         infoTxt.setText(message);
     }
 
-    //Return
+    //Return points
     private static int setScore(int dieOne, int dieTwo, int dieTree){
 
         int output = 0;
@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
     //Set die image
     private void setDieImg(int num, ImageView view){
 
+        //Prefix and postfix for image name
         String imageName = "";
         String prefix = "dice_";
         String postfix = ".png";
