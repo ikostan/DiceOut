@@ -77,15 +77,15 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="173dp"
         android:background="@android:color/background_light"
-        android:contentDescription="@string/die_two_img"
+        android:contentDescription="@string/die_one_img"
         android:src="@drawable/dice_one"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/dieTwoImg"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintVertical_bias="0.080" />
 
     <ImageView
         android:id="@+id/dieTwoImg"
@@ -100,14 +100,14 @@
         app:layout_constraintLeft_toRightOf="@+id/dieOneImg"
         app:layout_constraintRight_toLeftOf="@+id/dieTreeImg"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078" />
+        app:layout_constraintVertical_bias="0.080" />
 
     <ImageView
         android:id="@+id/dieTreeImg"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="171dp"
+        android:layout_marginTop="173dp"
         android:background="@android:color/background_light"
         android:contentDescription="@string/die_tree_img"
         android:src="@drawable/dice_one"
@@ -115,6 +115,6 @@
         app:layout_constraintLeft_toRightOf="@+id/dieTwoImg"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintVertical_bias="0.080" />
 
 </android.support.constraint.ConstraintLayout>
