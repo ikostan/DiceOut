@@ -19,3 +19,9 @@ how to build apps for Android.
 
 ## Source: https://www.lynda.com/Android-tutorials/About-game
 
+## External resources used for this project:
+
+IconFinder: https://www.iconfinder.com/
+
+Material Design Palette: https://www.materialpalette.com
+
